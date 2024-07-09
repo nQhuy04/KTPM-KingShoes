@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="67ac29c8686943f3a16083fc1d63a138" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="DB_KingShoesModel.Category" Width="1.5" PointX="1.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.OrderDetail" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.Order" Width="1.5" PointX="6.625" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.Payment" Width="1.5" PointX="9.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.Product" Width="1.5" PointX="3.875" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.ShoppingCart" Width="1.5" PointX="0.625" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.User" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__Products__Catego__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__OrderDeta__Order__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__OrderDeta__Produ__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__Orders__UserID__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__Payments__OrderI__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__ShoppingC__Produ__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__ShoppingC__UserI__45F365D3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "LoginRegistration";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/assets/css/login_registration.css">
+
+<div class="header_external">
+    <a href="@Url.Action("Index", "Home")">
+        <img class="logo_header" src="/assets/img/logo_header.png" alt="">
+    </a>
+    <img src="/assets/img/phone-solid.svg" class="icon_phone"></img>
+    <span class="hotline_text">Hotline: </span>
+    <span class="contact_number">0909300746</span>
+</div>
+
+<div class="background_external">
+    <div class="overview_background_external">
+        <img src="/assets/img/logo.png" class="logo_external" alt="">
+        <div class="KingShoes_text">KingShoes.vn</div>
+        <div class="slogan">“Vương Quốc Giày - Chất Lượng Đẳng Cấp”</div>
+    </div>
+
+    <div class="Login_Form" id="login_form">
+        <div style="color: #222;
+        font-size: 1.25rem;
+        max-width: 8.5rem; margin: 20px; ">Đăng nhập</div>
+        <input type="text" class="user_name_input" placeholder="Tên đăng nhập">
+
+        <input type="password" class="password_input" placeholder="Mật khẩu">
+        <div class="go_to_register">
+            <h4 class="no_account">Bạn chưa có tài khoản ?</h4>
+            <a class="go_to_register_button" href="">Đăng ký</a>
+        </div>
+
+        <button class="Login_button">Đăng nhập</button>
+    </div>
+
+
+
+    <div class="Register_form" id="register_form" style="display: none;">
+        <div style="color: #222; font-size: 1.25rem; max-width: 8.5rem; margin: 20px;">Đăng ký</div>
+
+        <div class="error-message" id="username-error"></div>
+        <input type="text" class="rg_username_input input-with-error" placeholder="Tên đăng nhập" id="username">
+
+        <div class="error-message" id="password-error"></div>
+        <input type="password" class="rg_password_input input-with-error" placeholder="Mật khẩu" id="password">
+
+        <div class="error-message" id="confirm-password-error"></div>
+        <input type="password" class="comfirm_password_input input-with-error" placeholder="Nhập lại mật khẩu" id="confirm-password">
+
+        <div class="have_account_div">
+            <h3 class="have_account">Bạn đã có tài khoản ?</h3>
+            <a href="" class="go_to_login_button">Đăng nhập</a>
+        </div>
+
+        <button class="Register_button">Đăng ký</button>
+    </div>
+
+    <script src="~/assets/js/login_registration.js"></script>
+</div>
+

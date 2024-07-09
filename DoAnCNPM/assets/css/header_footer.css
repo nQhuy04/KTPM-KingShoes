@@ -1,0 +1,439 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+    nav .nav-bar {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+        margin: 0 auto;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+    }
+
+.nav-bar .logo img {
+    max-height: 100%;
+    max-width: 140px;
+    height: auto;
+}
+
+.nav-bar .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.nav-item {
+    width: 10px;
+    height: 10px;
+}
+
+.nav-bar .nav-item:hover {
+    background-color: #FED700;
+    color: #fff;
+}
+
+.nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+    .nav-bar .nav-links .nav-li {
+        position: relative;
+    }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul li {
+        position: relative;
+    }
+
+        ul li ul.sub-menu li {
+            display: block;
+        }
+
+        ul li ul.sub-menu {
+            margin-top: -3px;
+            background-color: #FFF;
+            position: absolute;
+            z-index: 1001;
+            display: none;
+            padding: 0;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            width: max-content;
+            transition: all 0.3s ease;
+        }
+
+            ul li:hover > ul.sub-menu,
+            ul li ul.sub-menu:hover {
+                display: block;
+                top: 30px;
+            }
+
+        ul li.menu-item a:hover {
+            background-color: #FED700;
+        }
+
+        ul li.menu-item a {
+            display: block;
+            text-align: center;
+            border: 1px solid #333333;
+        }
+
+
+.nav-bar .nav-links li {
+    margin: 0 10px;
+    list-style: none;
+    position: relative;
+}
+
+.nav-links li a {
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.50s ease;
+}
+
+
+#search-box {
+    background-color: rgb(233, 233, 233);
+    border-radius: 30px;
+}
+
+#search-text::placeholder {
+    font-size: 14px;
+}
+
+#search-box #search-text {
+    border: none;
+    outline: none;
+    background-color: rgb(233, 233, 233);
+    padding: 10px 10px;
+    font-size: 18px;
+    border-radius: 30px;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.icon_search:hover {
+    color: #FED700;
+    transition: all 0.50s ease;
+}
+
+#search-box #search-btn {
+    background-color: rgb(233, 233, 233);
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 15px;
+}
+
+.shopping-cart {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    background-color: #000;
+    margin-left: 20px;
+    border-radius: 100%;
+    transition: all 0.50s ease;
+}
+
+.shopping-cart-item {
+    margin-top: 13px;
+}
+
+.shopping-cart:hover {
+    background-color: #FED700;
+}
+
+#search-text {
+    font-size: 10px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top-header {
+    background-color: #fff;
+    height: 41px;
+    border-bottom: rgb(231, 230, 230) 1px solid;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login, .register {
+    margin-top: 10px;
+    float: right;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    transition: all 0.50s ease;
+}
+
+    .login:hover, .register:hover {
+        color: #FED700;
+    }
+
+.register {
+    margin-right: 150px;
+}
+
+.login {
+    padding-right: 18px;
+    border-right: rgb(231, 230, 230) 1px solid;
+}
+
+.shopping-cart-notice {
+    padding-top: 3px;
+    padding: 0 3px;
+    border-radius: 500px;
+    position: absolute;
+    background-color: #FED700;
+    color: #000;
+    line-height: 17px;
+}
+
+
+.top-footer {
+    margin-top: 50px;
+    background-color: #333333;
+    height: 120px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+
+
+.register-introduce {
+    white-space: nowrap;
+    margin-left: 50px;
+}
+
+.email-register {
+    margin-left: 52px;
+}
+
+.envelope-icon, h3 {
+    font-weight: 100;
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle; /* Canh giữa theo chiều dọc */
+}
+
+.envelope-icon {
+    margin-right: 7px; /* Khoảng cách giữa icon và text */
+}
+
+.register-ads {
+    margin-right: 55px;
+    display: flex;
+    align-items: baseline;
+    color: #fff;
+}
+
+.register-ads-text, span {
+    padding: 0 3px;
+    margin: 0; /* Xóa khoảng cách mặc định */
+}
+
+.register-ads span {
+    font-size: 25px;
+    color: #FED700;
+    font-weight: bold;
+}
+
+.register-ads-text {
+    padding: 0px 0px;
+    margin: 0;
+}
+
+.voucher-name {
+    font-style: italic;
+    padding: 0 3px;
+    margin: 0;
+}
+
+.voucher-name {
+    font-size: 30px;
+    color: #FED700;
+    font-weight: bold;
+}
+
+
+
+.email-register {
+    width: 460px;
+    margin: 30px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+    .email-register input {
+        position: relative;
+        border: 0;
+        outline: none;
+        width: 460px;
+        width: 100%;
+    }
+
+.email-register-box {
+    position: relative;
+    width: 460px;
+    height: 50px;
+    display: flex;
+}
+
+.email-register-input {
+    padding: 0 25px;
+    font-size: 15px;
+    ;
+    border-radius: 50px;
+    width: 460px;
+    border: 0;
+    outline: none;
+    color: #FFF;
+    background-color: #606060;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+
+    .email-register-input::placeholder {
+        color: #B6C3CC;
+    }
+
+.email-register-btn {
+    font-size: 16px;
+    font-weight: 450;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    top: 5px;
+    right: 5px;
+    border-radius: 20px;
+    background-color: #FED700;
+    color: #000;
+    text-align: center;
+    align-items: center;
+    justify-self: center;
+    transition: all 0.50s ease;
+}
+
+    .email-register-btn:hover {
+        background-color: #333333;
+        color: #FED700;
+    }
+
+
+
+    
+/* end footer */
+
+.end-footer {
+    background-color: #000;
+    height: 550px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 3.5rem;
+}
+
+.footer-logo-img img {
+    margin-top: 88px;
+    margin-left: 115px;
+    max-width: 200px;
+    max-height: auto;
+}
+
+.footer-content {
+    margin-top: 88px;
+    color: #B6C3CC
+}
+
+    .footer-content h4 {
+        margin-bottom: 50x;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .footer-content li {
+        list-style: none;
+        margin-bottom: 15px;
+    }
+
+        .footer-content li a {
+            color: #B6C3CC;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+            font-weight: 400;
+            transition: all .40s ease;
+        }
+
+            .footer-content li a:hover {
+                color: #FED700;
+            }
+
+.footer-logo .icons {
+    margin-top: 140px;
+    margin-left: 135px;
+}
+
+    .footer-logo .icons a {
+        font-size: 25px;
+        color: #B6C3CC;
+        margin-right: 45px;
+        transition: all .40s ease;
+    }
+
+        .footer-logo .icons a:hover {
+            color: #FED700;
+        }

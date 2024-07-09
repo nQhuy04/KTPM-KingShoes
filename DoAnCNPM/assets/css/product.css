@@ -1,0 +1,91 @@
+﻿body {
+    margin: 0;
+}
+
+#div-top {
+    height: 50px;
+    background-color: gold;
+    bottom: 0px;
+    text-align: center;
+    left: 50%;
+    padding-top: 25px;
+}
+
+#div-footer {
+    height: 50px;
+    background-color: gold;
+    bottom: 0px;
+    text-align: center;
+    left: 50%;
+    padding-top: 25px;
+}
+
+#div-search-bar {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#div-main {
+    display: flex;
+    flex-direction: row;
+}
+
+#div-left {
+    width: 75%;
+    height: auto;
+    font-family: 'Times New Roman';
+    font-size: 20px;
+}
+
+#div-right {
+    width: 23%;
+    margin-right: 2%
+}
+
+.search-section {
+    width: 80%;
+    height: 30px;
+    border: thin;
+    border-radius: 3px;
+    font-size: 18px;
+    font-family: 'Times New Roman'
+}
+
+.div-box {
+    margin-left: 3%;
+    margin-top: 15px;
+    width: 20%;
+    height: 100px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+#div-pro-list {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.div-box-pro {
+    padding: 10px;
+    width: 22%;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: 'Times New Roman';
+    background-color: snow;
+}
+
+.pro-img {
+    margin-top: 5px;
+    margin-left: 5%;
+    width: 90%;
+}
+
+.des-box {
+    margin-left: 10px;
+}

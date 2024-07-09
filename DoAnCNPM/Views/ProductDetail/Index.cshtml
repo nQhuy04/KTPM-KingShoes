@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="product-top-row">
+        <p>Trang Chủ</p> <span>&#10230; </span> <p>Sản Phẩm</p> <span>&#10230; </span> <p>Jordan</p>
+    </div>
+    <div class="product-content-row">
+        <div class="product-content-left-row">
+            <div class="product-content-left-small-img">
+                <img src="~/assets/img/product.png">
+                <img src="~/assets/img/product.png">
+                <img src="~/assets/img/product.png">
+                <img src="~/assets/img/product.png">
+            </div>
+            <div class="product-content-left-big-img">
+                <img src="~/assets/img/product.png">
+            </div>
+        </div>
+        <div class="product-content-right-row">
+            <div>
+                <h1 style="font-size: 35; font-family: 'Mono';">NIKE AIRFORCE 1</h1><br />
+                <label style="font-size: 20; font-family: 'sans-serif';"> Mã SP: </label>
+                <label style="font-size: 24; font-family: 'Arial'; color: gray;"> NAF345</label>
+            </div>
+            <div class="product-content-right-product-price">
+                <p style="font-size: 31; font-family:'Sarabun'; color: red;">2.500.000</p>
+            </div>
+            <div class="product-content-size-right ">
+                <p style="font-weight: bold;">Size</p>
+                <div class="size">
+                    <button>38</button>
+                    <button>38</button>
+                    <button>38</button>
+                    <button>38</button>
+                    <button>38</button>
+                </div>
+            </div>
+            <div class="quality">
+                <p style="font-weight: bold;">So luong</p>
+                <button style="width: 40px; height: 40px;" type="number" min="0" value="1">-</button>
+                <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" style="width: 40px; height: 40px; text-align: center;" type="text" min="1" maxlength="2" value="1">
+                <button style="width: 40px; height: 40px;" type="number" min="0" value="1">+</button>
+            </div>
+            <br class="product-content-them-gio-hang">
+            <button style="background-color: yellow; font-family: 'Lucida Fax'; font-size: 15px; color:black" class="button-buy"><i class="fa-solid fa-cart-plus"></i>  THÊM VÀO GIỎ</button>
+            <button style="background-color: red; font-family:'Lucida Fax'; font-size: 15px; color: white;" class="button-buy"><i class="fa-solid fa-right-to-bracket"></i>  MUA HÀNG</button>
+            </br>
+            <br>
+            <label style="font-family: 'Times New Roman'; font-size: 17px;">Hoặc đặt mua: </label>  <label style="color: red; font-family: 'Lucida'; font-size: 27;"> 0111.123.111 </label><label style="font-family: 'Times New Roman'; font-size: 17px;">(Tư vấn Miễn Phí)</label>
+
+            </br>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/assets/icon/fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="~/assets/css/header_footer.css">
+    <link rel="stylesheet" href="~/assets/css/home.css">
+    <link rel="stylesheet" href="~/assets/css/product.css">
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/product_detail.css">
+    <title>KingShoes</title>
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <a class="register" href="@Url.Action("Index", "LoginRegistration")">
+                ĐĂNG KÝ
+            </a>
+
+            <a class="login" href="@Url.Action("Index", "LoginRegistration")">
+                ĐĂNG NHẬP
+            </a>
+        </div>
+        <nav>
+            <div class="nav-bar">
+                <div class="logo-container">
+                    <a class="logo" href="@Url.Action("Index", "Home")">
+                        <img src="~/assets/img/header-logo.png" alt="KingShoes Logo">
+                    </a>
+                </div>
+
+                <div class="menu">
+                    <ul class="nav-links">
+                        <li class="nav-li">
+                            <a class="nav-item" href="@Url.Action("Introduce", "Home")">
+                                GIỚI THIỆU
+                            </a>
+                        </li>
+                        <li class="nav-li">
+                            <a class="nav-item" href="@Url.Action("Index", "Product")">
+                                NIKE
+                            </a>
+
+                            
+                        </li>
+                        <li class="nav-li">
+                            <a class="nav-item" href="@Url.Action("Index", "Product")">
+                                ADIDAS
+                            </a>
+
+                            
+                        </li>
+                        <li class="nav-li">
+                            <a class="nav-item" href="@Url.Action("Index", "Product")">
+                                JORDAN
+                            </a>
+
+                            
+
+                        </li>
+                        <li class="nav-li">
+                            <a class="nav-item" href="@Url.Action("Index", "Product")">
+                                YEEZY
+                            </a>
+
+                            
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="search-box">
+                    <form action="" id="search-box">
+                        <input type="text" id="search-text" placeholder="Nhập từ cần tìm...">
+                        <button id="search-btn">
+                            <i class="fas fa-search icon_search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="shopping-cart">
+                    <i class="fas fa-shopping-cart shopping-cart-item"></i>
+                    <span class="shopping-cart-notice">0</span>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="Home_div" style="height:auto">
+        @RenderBody()
+    </div>
+      
+   
+
+    <footer>
+        <div class="top-footer">
+            <div class="register-introduce">
+                <i class="far fa-envelope envelope-icon"></i>
+                <h3>ĐĂNG KÝ NHẬN CODE</h3>
+            </div>
+
+            <div class="email-register">
+                <div class="email-register-box">
+                    <input type="text" class="email-register-input" placeholder="Địa chỉ email của bạn">
+                    <button class="email-register-btn">
+                        Đăng Ký
+                    </button>
+                </div>
+            </div>
+
+            <div class="register-ads">
+                <p class="register-ads-text">...Nhận ngay</p>
+                <span class="voucher-name">VOUCHER 100k</span>
+                <p class="register-ads-text">từ chúng tôi.</p>
+            </div>
+        </div>
+
+        <div class="end-footer">
+            <div class="footer-logo">
+                <a class="footer-logo-img" href="">
+                    <img src="~/assets/img/footer-logo.png" alt="KingShoes Logo">
+                </a>
+
+                <div class="icons">
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-content">
+                <h4>THÔNG TIN LIÊN HỆ</h4>
+                <li>KINGSHOES.VN Trang Thông Tin Chính Thức.</li>
+                <li>Địa chỉ: 192/2 Nguyễn Thái Bình, Phường 12, Quận Tân Bình, Thành phố Hồ Chí Minh</li>
+                <li>Email : cskh.kingshoes.vn@gmail.com</li>
+                <li><a href="">https://kingshoes.vn/</a></li>
+                <li><a href="">https://twitter.com/KingShoes_vn</a></li>
+                <li><a href="">https://instagram.com/KingShoes.vn</a></li>
+                <li><a href="">https://facebook.com/pg/www.KingShoes.vn</a></li>
+                <li><a href="">https://www.youtube.com/www.KingShoes.vn</a></li>
+                <li><a href="">http://bit.ly/KINGSHOES_map</a></li>
+                <li><a href="">https://www.tiktok.com/kingshoes_sneaker</a></li>
+            </div>
+
+            <div class="footer-content">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <li><a href="">Chăm sóc khách hàng</a></li>
+                <li><a href="">Thanh toán</a></li>
+                <li><a href="">Hướng dẫn mua hàng</a></li>
+            </div>
+
+            <div class="footer-content">
+                <h4>CHÍNH SÁCH</h4>
+                <li><a href="">Chế độ bảo hành</a></li>
+                <li><a href="">Chính sách đổi hàng</a></li>
+                <li><a href="">Bảo mật thông tin</a></li>
+                <li><a href="">Chính sách giao nhận</a></li>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
