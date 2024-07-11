@@ -1,0 +1,76 @@
+﻿@model DoAnCNPM.Models.User
+
+@{
+    ViewBag.Title = "Register";
+    Layout = null;
+}
+<link rel="stylesheet" href="~/assets/css/login_registration.css">
+
+    <div class="header_external">
+        <a href="@Url.Action("Index", "Home")">
+            <img class="logo_header" src="/assets/img/logo_header.png" alt="">
+        </a>
+        <img src="/assets/img/phone-solid.svg" class="icon_phone"></img>
+        <span class="hotline_text">Hotline: </span>
+        <span class="contact_number">0909300746</span>
+    </div>
+
+    <div class="background_external">
+        <div class="overview_background_external">
+            <img src="/assets/img/logo.png" class="logo_external" alt="">
+            <div class="KingShoes_text">KingShoes.vn</div>
+            <div class="slogan">“Vương Quốc Giày - Chất Lượng Đẳng Cấp”</div>
+
+            <div class="Register_form" id="register_form" style="display: block;">
+                <div style="color: #222; font-size: 1.25rem; max-width: 8.5rem; margin: 20px;">Đăng ký</div>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "rg_username_input input-with-error" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(model => model.RePassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.RePassword, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
+                        @Html.ValidationMessageFor(model => model.RePassword, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    @*<div>
+                @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Role, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
+                @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+            </div>*@
+
+                    <input type="submit" value="Đăng Ký" class="Register_button" />
+
+                    <div class="have_account_div">
+                        <h3 class="have_account">Bạn đã có tài khoản ?</h3>
+                    </div>
+                }
+            </div>
+        </div>
+        </div>
+
+    
+
+
+        <script src="~/assets/js/login_registration.js"></script>
+

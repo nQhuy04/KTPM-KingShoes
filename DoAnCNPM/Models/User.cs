@@ -11,7 +11,9 @@ namespace DoAnCNPM.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,8 +24,23 @@ namespace DoAnCNPM.Models
         }
     
         public int UserID { get; set; }
+
+        [Required(ErrorMessage = "Khong duoc de trong")]
+        [Display (Name = "Ten dang nhap")]
         public string Username { get; set; }
+
+
+        [Required(ErrorMessage = "Khong duoc de trong")]
+        [Display(Name = "Mat khau")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        [Required(ErrorMessage = "Khong duoc de trong")]
+        [Display(Name = "Nhap lai mat khau")]
+        [DataType(DataType.Password)]
+        [NotMapped]
+        [Compare("Password", ErrorMessage = "Nhap lai mat khau khong chinh xac")]
+        public string RePassword { get; set; }
         public string Email { get; set; }
         public string Role { get; set; }
     

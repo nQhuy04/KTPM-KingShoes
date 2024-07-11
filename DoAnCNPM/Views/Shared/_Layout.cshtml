@@ -12,16 +12,17 @@
     <link rel="stylesheet" href="~/assets/css/product.css">
     <link rel="stylesheet" href="~/assets/css/main.css">
     <link rel="stylesheet" href="~/assets/css/product_detail.css">
+    <link rel="stylesheet" href="~/assets/css/cart.css">
     <title>KingShoes</title>
 </head>
 <body>
     <header>
         <div class="top-header">
-            <a class="register" href="@Url.Action("Index", "LoginRegistration")">
+            <a class="register" href="@Url.Action("Register", "LoginRegistration")">
                 ĐĂNG KÝ
             </a>
 
-            <a class="login" href="@Url.Action("Index", "LoginRegistration")">
+            <a class="login" href="@Url.Action("Login", "LoginRegistration")">
                 ĐĂNG NHẬP
             </a>
         </div>
@@ -81,11 +82,15 @@
                     </form>
                 </div>
 
-                <div class="shopping-cart">
-                    <i class="fas fa-shopping-cart shopping-cart-item"></i>
-                    <span class="shopping-cart-notice">0</span>
-                </div>
-
+                
+                
+                
+                    <a  class="shopping-cart" href="@Url.Action("Index", "Cart")">
+                        <i class="fas fa-shopping-cart shopping-cart-item"></i>
+                        <span class="shopping-cart-notice">0</span>
+                    </a>
+                
+               
             </div>
         </nav>
     </header>

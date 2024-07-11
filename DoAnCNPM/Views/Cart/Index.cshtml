@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="ps-main">
+    <section class="ps-content pt-30 pb-30">
+        <div class="ps-container" id="tbdivbox_contac">
+            <div class="ps-cast-listing">
+                <div class="cartPage">
+                    <div class="ps-post_header">
+                        <h1 class="ps-post_tittle">Giỏ hàng</h1>
+                    </div>
+                    <div class="itemcart tr76142289">
+                        <div class="infocart">
+                            <div class="image">
+                                <a href="">
+                                    <img src="/assets/img/img-cart.png" alt="haehbfvsdjf">
+                                </a>
+                            </div>
+                            <div class="numberPrice">
+                                <div class="tittle">
+                                    <a href="https://kingshoes.vn/nike-gamma-force-dx9176-106-chinh-hang-gia-tot-den-king-shoes.html">
+                                        <h3>NIKE GAMMA FORCE</h3>
+                                    </a>
+                                </div>
+                                <div class="attribute_pro">
+                                    <span class="bage bg-primary">
+                                        Size giày: <b>36</b>
+                                    </span>
+                                </div>
+                                <p><b>Mã SP:</b> DX9176 106</p>
+                                <div class="number">
+                                    <div class="form-group--number">
+                                        <button class="minus" onclick="var result = document.getElementById('qty76152299'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty > 1 ) result.value--; updateGH(76152299,'gio-hang/update','qty76152299','.qtypro76152299','.sumprice76152299','.sumpro76152299');" type="button">
+                                            <span>-</span>
+                                        </button>
+                                        <input type="text" name="tqty[76152299]" class="form-control" id="qty76152299" value="1">
+                                        <button class="plus" onclick="var result = document.getElementById('qty76152299'); var qty = result.value; if( !isNaN( qty )) result.value++; updateGH(76152299,'gio-hang/update','qty76152299','.qtypro76152299','.sumprice76152299','.sumpro76152299');" type="button">
+                                            <span>+</span>
+                                        </button>
+                                    </div>
+                                    <span class="textPrice">x 2,900,000đ</span>
+                                </div>
+                                <div class="total_price">
+                                    Thành tiền: <span class="textPrice sumprice76152299">2,900,000đ</span>
+                                </div>
+                                <div class="btn_cart">
+                                    <button class="btnClick btnDel" onclick="return deteleSPGHPageName(76152299,'NMD_R1 V2','gio-hang/remove','gio-hang','sumprice7615','sumpro7615','.tr76152299');">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="clear">
+                                <button class="remove-item">X</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itemCart sumItemCart row justify-content-end">
+                        <div class="col-auto co-12">
+                            <div class="inforSum">
+                                <b>Tổng tiền:</b>
+                                <span class="textPrice sumPrice">2,900,000đ</span>
+                            </div>
+                        </div>
+                        <div class="col-auto col-12 d-flex justify-content-end">
+                            <div class="buyNext mr-4">
+                                <a class="ps-btn" href="san-pham">Mua tiếp</a>
+                            </div>
+                            <div class="buyNext">
+                                <a class="ps-btn" href="checkouts">Đặt hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
