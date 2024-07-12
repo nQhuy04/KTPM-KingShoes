@@ -18,31 +18,68 @@ namespace DoAnCNPM.Controllers
             return View();
         }
 
-        
+
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult AuthenLogin(User user)
+        {
+            try
+            {
+                var check_Username = db.Users.Where(s => s.Username==user.Username).FirstOrDefault(); /*FirstOnDefault là đặt con trỏ ở đầu dòng để đối chiếu*/
+                var check_Userpassword = db.Users.Where(s => s.Userpassword==user.Userpassword).FirstOrDefault();
+
+
+                if (check_Username ==null || check_Userpassword==null)
+                {
+                    if (check_Username == null)
+                        ViewBag.ErrorUsername = "Ten Dang Nhap khong hop le";
+                    if (check_Userpassword == null)
+                        ViewBag.ErrorUserpassword = "Mat Khau khong hop le";
+                    return View("Login");
+                }
+                else //Dang nhap thanh cong
+                {
+                    Session["Username"] = user.Username;
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            catch
+            {
+                return View("Login"); //Khi dang nhap that bai, load lai trang login va hien thi loi
+            }
+        }
 
         public ActionResult Register()
         {
             return View();
         }
 
-        [HttpPost]
-
-        public ActionResult Register(User user)
+        public ActionResult AuthenRegister(User user)
         {
-            if(db.Users.Any(x=>x.Username == user.Username))
+            try
             {
-                ViewBag.Notification = "Tài khoản này đã tồn tại";
-                return View();
-            }
-            else
-            {
-                db.Users.Add(user);
-                 db.SaveChanges();
+                if (ModelState.IsValid)
+                {
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    return View("Register");
+                }
 
-                Session["UserID"] = user.UserID.ToString();
-                Session["Username"] = user.Username.ToString();
-                return RedirectToAction("Login", "LoginRegistration");
             }
+            catch //bao loi
+            {
+
+                return View("Register");
+            }
+
         }
 
         public ActionResult Logout()
@@ -50,33 +87,5 @@ namespace DoAnCNPM.Controllers
             Session.Clear();
             return RedirectToAction("Index", "Home");
         }
-
-        [HttpGet]
-
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-
-        public ActionResult Login(User user)
-        {
-            var checklogin = db.Users.Where(x=>x.Username.Equals(user.Username)&& x.Password.Equals(user.Password)).FirstOrDefault();
-            if(checklogin != null)
-            {
-                Session["UserID"] = user.UserID.ToString();
-                Session["Username"] = user.UserID.ToString();
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                ViewBag.Notification = "Tên Đăng Nhập hoặc Mật Khẩu không chính xác";
-            }
-            return View();
-        }
-
-
     }
 }

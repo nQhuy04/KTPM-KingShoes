@@ -32,9 +32,9 @@
         @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
 
 
-        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "password_input" } })
-        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.Userpassword, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Userpassword, new { htmlAttributes = new { @class = "password_input" } })
+        @Html.ValidationMessageFor(model => model.Userpassword, "", new { @class = "text-danger" })
         <div class="go_to_register">
             <h4 class="no_account">Bạn chưa có tài khoản ?</h4>
             <a class="go_to_register_button" href="">Đăng ký</a>
@@ -52,13 +52,13 @@
         @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "rg_username_input input-with-error" } })
         @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
 
-        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
-        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.Userpassword, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Userpassword, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
+        @Html.ValidationMessageFor(model => model.Userpassword, "", new { @class = "text-danger" })
 
-        @Html.LabelFor(model => model.RePassword, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.EditorFor(model => model.RePassword, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
-        @Html.ValidationMessageFor(model => model.RePassword, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.ReUserpassword, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.ReUserpassword, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
+        @Html.ValidationMessageFor(model => model.ReUserpassword, "", new { @class = "text-danger" })
 
         <div class="have_account_div">
             <h3 class="have_account">Bạn đã có tài khoản ?</h3>

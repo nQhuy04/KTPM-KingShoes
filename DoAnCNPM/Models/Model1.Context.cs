@@ -25,12 +25,11 @@ namespace DoAnCNPM.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Archive> Archives { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

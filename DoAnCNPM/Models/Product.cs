@@ -17,22 +17,22 @@ namespace DoAnCNPM.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
+            this.Archives = new HashSet<Archive>();
             this.OrderDetails = new HashSet<OrderDetail>();
-            this.ShoppingCarts = new HashSet<ShoppingCart>();
         }
     
         public int ProductID { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public Nullable<int> ArchiveID { get; set; }
+        public string ProductName { get; set; }
         public decimal Price { get; set; }
-        public string Image { get; set; }
-        public int Stock { get; set; }
+        public string ImageProduct { get; set; }
+        public int Size { get; set; }
         public Nullable<int> CategoryID { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Archive> Archives { get; set; }
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; }
     }
 }

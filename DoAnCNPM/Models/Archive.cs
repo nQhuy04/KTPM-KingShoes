@@ -12,14 +12,12 @@ namespace DoAnCNPM.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Payment
+    public partial class Archive
     {
-        public int PaymentID { get; set; }
-        public Nullable<int> OrderID { get; set; }
-        public System.DateTime PaymentDate { get; set; }
-        public decimal Amount { get; set; }
-        public string PaymentMethod { get; set; }
+        public int ArchiveID { get; set; }
+        public Nullable<int> ProductID { get; set; }
+        public int Stock { get; set; }
     
-        public virtual Order Order { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

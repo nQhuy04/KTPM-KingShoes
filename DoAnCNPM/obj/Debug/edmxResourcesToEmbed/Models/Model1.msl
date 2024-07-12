@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DB_KingShoesModelStoreContainer" CdmEntityContainer="DB_KingShoesEntities">
+    <EntitySetMapping Name="Archives">
+      <EntityTypeMapping TypeName="DB_KingShoesModel.Archive">
+        <MappingFragment StoreEntitySet="Archive">
+          <ScalarProperty Name="ArchiveID" ColumnName="ArchiveID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="DB_KingShoesModel.Category">
         <MappingFragment StoreEntitySet="Categories">
@@ -12,7 +21,6 @@
     <EntitySetMapping Name="OrderDetails">
       <EntityTypeMapping TypeName="DB_KingShoesModel.OrderDetail">
         <MappingFragment StoreEntitySet="OrderDetails">
-          <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
           <ScalarProperty Name="OrderID" ColumnName="OrderID" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
@@ -30,37 +38,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Payments">
-      <EntityTypeMapping TypeName="DB_KingShoesModel.Payment">
-        <MappingFragment StoreEntitySet="Payments">
-          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="DB_KingShoesModel.Product">
         <MappingFragment StoreEntitySet="Products">
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ArchiveID" ColumnName="ArchiveID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
           <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
-          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="ImageProduct" ColumnName="ImageProduct" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ShoppingCarts">
-      <EntityTypeMapping TypeName="DB_KingShoesModel.ShoppingCart">
-        <MappingFragment StoreEntitySet="ShoppingCart">
-          <ScalarProperty Name="CartID" ColumnName="CartID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -69,9 +56,9 @@
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Userpassword" ColumnName="Userpassword" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

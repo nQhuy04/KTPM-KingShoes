@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<DoAnCNPM.Models.Product>
 @{
     ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -44,115 +44,25 @@
 <div id="div-main">
     <div id="div-left">
         <div id="div-pro-list">
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro1.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>10.000.000</p>
-                </div>
+            
+                @foreach (var pro in Model)
+                {
+                    
+                    <div class="div-box-pro">
+                        <a href="@Url.Action("Index", "ProductDetail")">
+                            <img class="pro-img" src="@Url.Content(pro.ImageProduct)" />
+                            </a>
+                            <div class="des-box">
+                                <p>@Html.DisplayFor(model => pro.ProductName)</p>
+                                <br />
+
+                                <p>@Html.DisplayFor(model => pro.Price)</p>
+                            </div>
+                    </div>
+                
+                }
+            
             </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro2.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>20.000.000</p>
-                </div>
-            </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro3.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>30.000.000</p>
-                </div>
-            </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro4.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>40.000.000</p>
-                </div>
-            </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro1.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>10.000.000</p>
-                </div>
-            </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro2.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>20.000.000</p>
-                </div>
-            </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro3.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>30.000.000</p>
-                </div>
-            </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro4.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>40.000.000</p>
-                </div>
-            </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro1.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>10.000.000</p>
-                </div>
-            </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro2.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>20.000.000</p>
-                </div>
-            </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro3.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>30.000.000</p>
-                </div>
-            </div>
-            <div class="div-box-pro">
-                <img class="pro-img" src="~/assets/img/pro4.jpg" />
-                <div class="des-box">
-                    <p><b>Mô tả sản phẩm ... </b></p>
-                    <br />
-                    <p>Rates: ../5</p>
-                    <p>40.000.000</p>
-                </div>
-            </div>
-        </div>
     </div>
     <div id="div-right">
         <img style="width: 100%; margin-top: 15%" src="~/assets/img/Banner.jpg" />

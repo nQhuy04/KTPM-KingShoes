@@ -14,39 +14,43 @@ namespace DoAnCNPM.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
             this.Orders = new HashSet<Order>();
-            this.ShoppingCarts = new HashSet<ShoppingCart>();
         }
-    
+
         public int UserID { get; set; }
 
         [Required(ErrorMessage = "Khong duoc de trong")]
-        [Display (Name = "Ten dang nhap")]
+        [Display(Name = "Ten dang nhap")]
         public string Username { get; set; }
-
 
         [Required(ErrorMessage = "Khong duoc de trong")]
         [Display(Name = "Mat khau")]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string Userpassword { get; set; }
 
         [Required(ErrorMessage = "Khong duoc de trong")]
         [Display(Name = "Nhap lai mat khau")]
         [DataType(DataType.Password)]
         [NotMapped]
-        [Compare("Password", ErrorMessage = "Nhap lai mat khau khong chinh xac")]
-        public string RePassword { get; set; }
+        [Compare("Userpassword", ErrorMessage = "Nhap lai mat khau khong chinh xac")]
+        public string ReUserpassword { get; set; }
+
+        [Required(ErrorMessage = "Khong duoc de trong")]
+        [EmailAddress(ErrorMessage = "Email khong hop le")]
         public string Email { get; set; }
-        public string Role { get; set; }
-    
+
+        [Required(ErrorMessage = "Khong duoc de trong")]
+        [Display(Name = "Role")]
+        public string UserRole { get; set; }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; }
     }
 }

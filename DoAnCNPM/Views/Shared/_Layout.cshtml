@@ -18,13 +18,27 @@
 <body>
     <header>
         <div class="top-header">
-            <a class="register" href="@Url.Action("Register", "LoginRegistration")">
-                ĐĂNG KÝ
-            </a>
+            @if (Session["Username"] != null)
+            {
 
-            <a class="login" href="@Url.Action("Login", "LoginRegistration")">
-                ĐĂNG NHẬP
-            </a>
+                <a class="register" href="@Url.Action("Logout", "LoginRegistration")">
+                    ĐĂNG XUẤT
+                </a>
+
+                <p class="login">XIN CHÀO @Session["Username"] !</p>
+
+            }
+            else
+            {
+                <a class="register" href="@Url.Action("Register", "LoginRegistration")">
+                    ĐĂNG KÝ
+                </a>
+
+                <a class="login" href="@Url.Action("Login", "LoginRegistration")">
+                    ĐĂNG NHẬP
+                </a>
+            }
+
         </div>
         <nav>
             <div class="nav-bar">
@@ -112,7 +126,9 @@
                 <div class="email-register-box">
                     <input type="text" class="email-register-input" placeholder="Địa chỉ email của bạn">
                     <button class="email-register-btn">
-                        Đăng Ký
+                        <a class="email-register-btn-in" href="@Url.Action("Register", "LoginRegistration")">
+                            Đăng Ký
+                        </a>
                     </button>
                 </div>
             </div>

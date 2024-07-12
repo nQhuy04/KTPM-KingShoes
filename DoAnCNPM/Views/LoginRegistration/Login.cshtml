@@ -7,44 +7,55 @@
 
 <link rel="stylesheet" href="~/assets/css/login_registration.css">
 
-<div class="header_external">
-    <a href="@Url.Action("Index", "Home")">
-        <img class="logo_header" src="/assets/img/logo_header.png" alt="">
-    </a>
-    <img src="/assets/img/phone-solid.svg" class="icon_phone"></img>
-    <span class="hotline_text">Hotline: </span>
-    <span class="contact_number">0909300746</span>
-</div>
-
-<div class="background_external">
-    <div class="overview_background_external">
-        <img src="/assets/img/logo.png" class="logo_external" alt="">
-        <div class="KingShoes_text">KingShoes.vn</div>
-        <div class="slogan">“Vương Quốc Giày - Chất Lượng Đẳng Cấp”</div>
+@using (Html.BeginForm("AuthenLogin", "LoginRegistration", FormMethod.Post)) //Truyền vào hàm xử lý Login
+{
+    <div class="header_external">
+        <a href="@Url.Action("Index", "Home")">
+            <img class="logo_header" src="/assets/img/logo_header.png" alt="">
+        </a>
+        <img src="/assets/img/phone-solid.svg" class="icon_phone"></img>
+        <span class="hotline_text">Hotline: </span>
+        <span class="contact_number">0909300746</span>
     </div>
 
-    <div class="Login_Form" id="login_form">
-        <div style="color: #222;
+    <div class="background_external">
+        <div class="overview_background_external">
+            <img src="/assets/img/logo.png" class="logo_external" alt="">
+            <div class="KingShoes_text">KingShoes.vn</div>
+            <div class="slogan">“Vương Quốc Giày - Chất Lượng Đẳng Cấp”</div>
+        </div>
+
+        <div class="Login_Form" id="login_form">
+            <div style="color: #222;
             font-size: 1.25rem;
             max-width: 8.5rem; margin: 20px; ">Đăng nhập</div>
+            @Html.DisplayNameFor(m => m.Username)
+            @Html.EditorFor(m => m.Username, new { htmlAttributes = new { @class = "user_name_input" } })
+            @Html.ValidationMessageFor(m => m.Username)
+            @if (ViewBag.Errorname != null)
+            {
+                <h5>@ViewBag.ErrorUsername</h5>
+            }
 
-        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "user_name_input" } })
-        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
 
 
-        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "password_input" } })
-        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            @Html.DisplayNameFor(m => m.Userpassword)
+            @Html.EditorFor(m => m.Userpassword, new { htmlAttributes = new { @class = "password_input" } })
+            @Html.ValidationMessageFor(m => m.Userpassword)
+            @if (ViewBag.Errorpassword != null)
+            {
+                <h5>@ViewBag.ErrorUserpassword</h5>
+            }
 
-        <input type="submit" value="Đăng Nhập" class="Login_button" />
+            <input type="submit" value="Đăng Nhập" class="Login_button" />
 
-        <div class="go_to_register">
-            <h4 class="no_account">Bạn chưa có tài khoản ?</h4>
-            <a class="go_to_register_button" href="@Url.Action("Register", "LoginRegistration")">Đăng ký</a>
+            <div class="go_to_register">
+                <h4 class="no_account">Bạn chưa có tài khoản ?</h4>
+                <a class="go_to_register_button" href="@Url.Action("Register", "LoginRegistration")">Đăng ký</a>
+            </div>
         </div>
     </div>
-</div>
+}
 
 
 

@@ -349,7 +349,7 @@ header .nav-bar {
 
 .email-register-btn {
     font-size: 16px;
-    font-weight: 450;
+    font-weight: 500;
     border: none;
     cursor: pointer;
     position: absolute;
@@ -365,6 +365,11 @@ header .nav-bar {
     justify-self: center;
     transition: all 0.50s ease;
 }
+
+    .email-register-btn-in{
+        text-decoration: none;
+        color:#000;
+    }
 
     .email-register-btn:hover {
         background-color: #333333;

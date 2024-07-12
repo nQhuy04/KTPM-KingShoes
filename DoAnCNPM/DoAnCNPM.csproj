@@ -131,10 +131,14 @@
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginRegistrationController.cs" />
+    <Compile Include="Controllers\ProducrtClientController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Archive.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -160,13 +164,7 @@
     <Compile Include="Models\OrderDetail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Payment.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ShoppingCart.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
@@ -2036,6 +2034,11 @@
     <Content Include="assets\img\Banner.jpg" />
     <Content Include="assets\img\footer-logo.png" />
     <Content Include="assets\img\header-logo.png" />
+    <Content Include="assets\img\home-product-1.jpg" />
+    <Content Include="assets\img\home-product-2.png" />
+    <Content Include="assets\img\home-product-3.png" />
+    <Content Include="assets\img\home-product-4.png" />
+    <Content Include="assets\img\home-product-5.png" />
     <Content Include="assets\img\logo.png" />
     <Content Include="assets\img\logo_header.png" />
     <Content Include="assets\img\phone-solid.svg" />
@@ -2065,8 +2068,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2075,13 +2078,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="assets\icon\fontawesome-free-6.5.2-web\less\brands.less" />
     <Content Include="assets\icon\fontawesome-free-6.5.2-web\less\fontawesome.less" />
     <Content Include="assets\icon\fontawesome-free-6.5.2-web\less\regular.less" />
@@ -2127,6 +2123,13 @@
     <Content Include="assets\icon\fontawesome-free-6.5.2-web\scss\_sizing.scss" />
     <Content Include="assets\icon\fontawesome-free-6.5.2-web\scss\_stacked.scss" />
     <Content Include="assets\icon\fontawesome-free-6.5.2-web\scss\_variables.scss" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2157,6 +2160,7 @@
     <Content Include="Views\LoginRegistration\Register.cshtml" />
     <Content Include="Views\LoginRegistration\Login.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\ProducrtClient\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

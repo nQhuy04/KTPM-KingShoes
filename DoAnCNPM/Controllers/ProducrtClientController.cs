@@ -7,10 +7,10 @@ using System.Web.Mvc;
 
 namespace DoAnCNPM.Controllers
 {
-    public class ProductController : Controller
+    public class ProducrtClientController : Controller
     {
         DB_KingShoesEntities db = new DB_KingShoesEntities();
-        // GET: Product
+        // GET: ProducrtClient
         public ActionResult Index()
         {
             return View(db.Products.ToList());
