@@ -26,21 +26,15 @@
         </div>
 
         <div class="Login_Form" id="login_form">
-            <div style="color: #222;
-            font-size: 1.25rem;
-            max-width: 8.5rem; margin: 20px; ">Đăng nhập</div>
-            @Html.DisplayNameFor(m => m.Username)
-            @Html.EditorFor(m => m.Username, new { htmlAttributes = new { @class = "user_name_input" } })
+            <div style="color: #222; font-size: 1.25rem; max-width: 8.5rem; margin: 20px;">Đăng nhập</div>
+            @Html.EditorFor(m => m.Username, new { htmlAttributes = new { @class = "user_name_input", @placeholder = "Nhập tên đăng nhập" } })
             @Html.ValidationMessageFor(m => m.Username)
             @if (ViewBag.Errorname != null)
             {
                 <h5>@ViewBag.ErrorUsername</h5>
             }
 
-
-
-            @Html.DisplayNameFor(m => m.Userpassword)
-            @Html.EditorFor(m => m.Userpassword, new { htmlAttributes = new { @class = "password_input" } })
+            @Html.EditorFor(m => m.Userpassword, new { htmlAttributes = new { @class = "password_input", @placeholder = "Nhập mật khẩu" } })
             @Html.ValidationMessageFor(m => m.Userpassword)
             @if (ViewBag.Errorpassword != null)
             {

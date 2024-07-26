@@ -1,0 +1,180 @@
+﻿@model IEnumerable<DoAnCNPM.Models.Product>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả tìm kiếm</title>
+    <style>
+        /* CSS cho giao diện kết quả tìm kiếm */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .search-results-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px; /* Tăng kích thước chữ */
+            margin-bottom: 10px; /* Thêm khoảng cách dưới chữ */
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px; /* Điều chỉnh chiều cao nếu cần */
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product-details-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #FED700;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+            .product-details-link:hover {
+                background-color: #f2c100; /* Màu sắc khi di chuột */
+                transform: scale(1.05); /* Tăng kích thước một chút khi di chuột */
+            }
+
+        /* CSS cho gợi ý tìm kiếm */
+        #search-suggestions {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fff;
+            max-height: 200px;
+            overflow-y: auto;
+            position: absolute;
+            z-index: 1000;
+            width: calc(100% - 22px);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+            .suggestion-item:hover {
+                background-color: #f0f0f0;
+            }
+    </style>
+</head>
+<body>
+    <div class="search-results-container">
+        <h2>Kết quả tìm kiếm</h2>
+        @if (Model.Any())
+        {
+            <div class="product-grid">
+                @foreach (var product in Model)
+                {
+                    <div class="product-card">
+                        <img src="@Url.Content(product.ImageProduct)" alt="@product.ProductName" class="product-image" />
+                        <div class="product-info">
+                            <h3 class="product-name">@product.ProductName</h3>
+                            <p class="product-price">
+                                @if (product.Price.HasValue)
+                                {
+                                    @product.Price.Value.ToString("C")
+                                }
+                                else
+                                {
+                                    <span>Liên hệ để biết giá</span>
+                                }
+                            </p>
+                            <a href="@Url.Action("Details", "NikeProduct", new { id = product.ProductID })" class="product-details-link">Xem chi tiết</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>Không tìm thấy sản phẩm nào phù hợp với từ khóa tìm kiếm của bạn.</p>
+        }
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#search-text').on('input', function() {
+                var query = $(this).val();
+                if (query.length > 2) {
+                    $.ajax({
+                        url: '@Url.Action("GetSearchSuggestions", "NikeProduct")',
+                        data: { term: query },
+                        type: 'GET',
+                        success: function(result) {
+                            var suggestions = result.map(function(item) {
+                                return '<li class="suggestion-item">' + item + '</li>';
+                            }).join('');
+                            $('#search-suggestions').html(suggestions).show();
+                        },
+                        error: function() {
+                            console.log('Không thể lấy gợi ý tìm kiếm.');
+                        }
+                    });
+                } else {
+                    $('#search-suggestions').hide();
+                }
+            });
+
+            $(document).on('click', '.suggestion-item', function() {
+                $('#search-text').val($(this).text());
+                $('#search-suggestions').hide();
+            });
+        });
+    </script>
+</body>
+</html>

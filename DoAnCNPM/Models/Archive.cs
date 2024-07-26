@@ -16,7 +16,7 @@ namespace DoAnCNPM.Models
     {
         public int ArchiveID { get; set; }
         public Nullable<int> ProductID { get; set; }
-        public int Stock { get; set; }
+        public Nullable<int> Stock { get; set; }
     
         public virtual Product Product { get; set; }
     }

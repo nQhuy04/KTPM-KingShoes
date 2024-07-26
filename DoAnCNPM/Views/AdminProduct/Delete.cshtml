@@ -1,0 +1,29 @@
+﻿@model DoAnCNPM.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<div>
+    <h4>Are you sure you want to delete this product?</h4>
+    <h4>Product Name: @Model.ProductName</h4>
+    <h4>Price: @Model.Price</h4>
+    <h4>Category: @Model.Category.CategoryName</h4>
+    @if (!string.IsNullOrEmpty(Model.ImageProduct))
+    {
+        <img src="@Url.Content(Model.ImageProduct)" alt="Product Image" style="max-height: 200px; max-width: 200px; margin-top: 10px;" />
+    }
+</div>
+
+@using (Html.BeginForm("Delete", "Product", new { id = Model.ProductID }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <p>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink("Cancel", "Index")
+    </p>
+}

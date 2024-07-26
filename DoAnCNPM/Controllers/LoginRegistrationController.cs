@@ -29,22 +29,33 @@ namespace DoAnCNPM.Controllers
         {
             try
             {
-                var check_Username = db.Users.Where(s => s.Username==user.Username).FirstOrDefault(); /*FirstOnDefault là đặt con trỏ ở đầu dòng để đối chiếu*/
-                var check_Userpassword = db.Users.Where(s => s.Userpassword==user.Userpassword).FirstOrDefault();
+                var checkUser = db.Users
+                    .Where(s => s.Username == user.Username && s.Userpassword == user.Userpassword)
+                    .FirstOrDefault(); 
 
 
-                if (check_Username ==null || check_Userpassword==null)
+                if (checkUser == null)
                 {
-                    if (check_Username == null)
-                        ViewBag.ErrorUsername = "Ten Dang Nhap khong hop le";
-                    if (check_Userpassword == null)
-                        ViewBag.ErrorUserpassword = "Mat Khau khong hop le";
+                    ViewBag.ErrorMessage = "Tên đăng nhập hoặc mật khẩu không hợp lệ";
                     return View("Login");
                 }
                 else //Dang nhap thanh cong
                 {
-                    Session["Username"] = user.Username;
-                    return RedirectToAction("Index", "Home");
+                    Session["Username"] = checkUser.Username;
+                    Session["UserRole"] = checkUser.UserRole;
+
+                    if (checkUser.UserRole == "Admin")
+                    {
+                        return RedirectToAction("Index", "AdminHome");
+                    }
+                    else if (checkUser.UserRole == "Customer")
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        return View("Login");
+                    }
                 }
             }
             catch

@@ -4,82 +4,61 @@
     ViewBag.Title = "Register";
     Layout = null;
 }
-<link rel="stylesheet" href="~/assets/css/login_registration.css">
-@using (Html.BeginForm("AuthenRegister", "LoginRegistration", FormMethod.Post)) //Truyền vào hàm xử lý Login
+<link rel="stylesheet" href="~/assets/css/register.css">
+<style>
+    .text-danger {
+        margin-left: 15px; /* Thêm khoảng cách bên trái cho thông báo lỗi */
+        color: red;
+    }
+</style>
+@using (Html.BeginForm("AuthenRegister", "LoginRegistration", FormMethod.Post)) // Truyền vào hàm xử lý đăng ký
 {
     <div class="header_external">
         <a href="@Url.Action("Index", "Home")">
-            <img class="logo_header" src="/assets/img/logo_header.png" alt="">
+            <img class="logo_header" src="/assets/img/logo_header.png" alt="Logo">
         </a>
-        <img src="/assets/img/phone-solid.svg" class="icon_phone"></img>
+        <img src="/assets/img/phone-solid.svg" class="icon_phone" alt="Phone Icon">
         <span class="hotline_text">Hotline: </span>
         <span class="contact_number">0909300746</span>
     </div>
 
     <div class="background_external">
         <div class="overview_background_external">
-            <img src="/assets/img/logo.png" class="logo_external" alt="">
+            <img src="/assets/img/logo.png" class="logo_external" alt="Logo">
             <div class="KingShoes_text">KingShoes.vn</div>
             <div class="slogan">“Vương Quốc Giày - Chất Lượng Đẳng Cấp”</div>
         </div>
-        <div class="Register_form" id="register_form" style="display: block;">
+        <div class="Login_Form" id="login_form" style="display: block;">
             <div style="color: #222; font-size: 1.25rem; max-width: 8.5rem; margin: 20px;">Đăng ký</div>
 
-
-
-
-            @Html.DisplayNameFor(m => m.Username)
-            @Html.EditorFor(m => m.Username, new { htmlAttributes = new { @class = "rg_username_input input-with-error" } })
-            @Html.ValidationMessageFor(model => model.Username)
+            @Html.EditorFor(m => m.Username, new { htmlAttributes = new { @class = "rg_username_input input-with-error", @placeholder = "Nhập tên đăng nhập" } })
+            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
             @if (ViewBag.Errorname != null)
             {
                 <h5>@ViewBag.ErrorUsername</h5>
             }
 
-
-
-            @Html.DisplayNameFor(m => m.Userpassword)
-            @Html.EditorFor(m => m.Userpassword, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
-            @Html.ValidationMessageFor(m => m.Userpassword)
+            @Html.EditorFor(m => m.Userpassword, new { htmlAttributes = new { @class = "rg_password_input input-with-error", @placeholder = "Nhập mật khẩu" } })
+            @Html.ValidationMessageFor(m => m.Userpassword, "", new { @class = "text-danger" })
             @if (ViewBag.Errorpassword != null)
             {
                 <h5>@ViewBag.ErrorUserpassword</h5>
             }
 
+            @Html.EditorFor(m => m.ReUserpassword, new { htmlAttributes = new { @class = "rg_password_input input-with-error", @placeholder = "Xác nhận mật khẩu" } })
+            @Html.ValidationMessageFor(m => m.ReUserpassword, "", new { @class = "text-danger" })
 
+            @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "rg_password_input input-with-error", @placeholder = "Nhập Email" } })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
 
-            @Html.DisplayNameFor(m => m.Userpassword)
-            @Html.EditorFor(m => m.ReUserpassword, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
-            @Html.ValidationMessageFor(m => m.ReUserpassword)
-
-
-
-            @Html.DisplayNameFor(m => m.Email)
-            @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
-            @Html.ValidationMessageFor(m => m.Email)
-
-
-
-            @Html.DisplayNameFor(m => m.UserRole)
-            @Html.EditorFor(m => m.UserRole, new { htmlAttributes = new { @class = "rg_password_input input-with-error" } })
-            @Html.ValidationMessageFor(m => m.UserRole)
-
-
-
-
+            @Html.EditorFor(m => m.UserRole, new { htmlAttributes = new { @class = "rg_password_input input-with-error", @placeholder = "Nhập Role" } })
+            @Html.ValidationMessageFor(m => m.UserRole, "", new { @class = "text-danger" })
 
             <input type="submit" value="Đăng Ký" class="Register_button" />
-
-            <div class="have_account_div">
-                <h3 class="have_account">Bạn đã có tài khoản ?</h3>
+            <div class="go_to_register">
+                <h4 class="no_account">Bạn đã có tài khoản ?</h4>
+                <a class="go_to_register_button" href="@Url.Action("Login", "LoginRegistration")">Đăng Nhập</a>
             </div>
-
         </div>
     </div>
 }
-
-
-
-
-    <script src="~/assets/js/login_registration.js"></script>
-

@@ -1,0 +1,272 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
+/* header external css */
+.header_external {
+    height: 85px;
+    width: 100%;
+    color: white;
+    display: flex;  
+    align-items: center;
+}
+
+.logo_header {
+    width: 180px;
+    margin-left: 100px;
+}
+
+.icon_phone {
+    width: 20px;
+    margin-left: 800px;
+}
+
+.hotline_text {
+    color: #6e6d6d;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.contact_number {
+    color: black;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+
+
+/* background external css*/
+.background_external {
+    display: flex;
+    width: 100%;
+    height: 720px;
+    background-color: #ffd600;
+}
+
+.overview_background_external {
+    width: 100%;
+}
+
+.logo_external {
+    margin-top: 130px;
+    margin-left: 290px;
+}
+
+.KingShoes_text {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+
+.slogan {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+
+.nameinput {
+    margin-left: 20px;
+}
+
+
+
+
+/* Login form css */
+.Login_Form {
+    height: 560px;
+    width: 373px;
+    background-color: #f2f2f2;
+    float: right;
+    margin-top: 100px;
+    margin-right: 150px;
+    border-radius: 5px;
+}
+
+
+
+
+.user_name_input {
+    width: 340px;
+    /* height: 20px; */
+    padding: 12px;
+    font-size: medium;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+
+
+.password_input {
+    width: 340px;
+    /* height: 20px; */
+    padding: 12px;
+    font-size: medium;
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+.go_to_register {
+    display: flex;
+    height: 100px;
+    width: 400px;
+    align-items: center;
+}
+
+
+.no_account {
+    margin-left: 80px;
+    padding-right: 5px;
+    font-size: 15px;
+    color: black;
+    position: relative;
+    top: -5px;
+}
+
+.go_to_register_button {
+    color: #ffd600;
+    font-size: 18px;
+    position: relative;
+    top: -5px;
+}
+
+.Login_button {
+    width: 120px;
+    height: 40px;
+    background-color: #ffd600;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    float: right;
+    margin-right: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+    .Login_button:hover {
+        color: #e5c000;
+        background-color: #585858;
+        transform: scale(1.05);
+    }
+
+
+/* Register form css */
+.Register_form {
+    height: 590px;
+    width: 400px;
+    background-color: #f2f2f2;
+    float: right;
+    margin-top: 100px;
+    margin-right: 150px;
+    border-radius: 5px;
+    padding-right: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+
+.rg_username_input {
+    width: 338px;
+    height: auto;
+    padding: 10px;
+    font-size: medium;
+    margin-left: 15px;
+    /* margin-top: 10px; */
+    outline: none;
+    box-shadow: none;
+}
+
+.rg_password_input {
+    width: 338px;
+    height: auto;
+    padding: 10px;
+    font-size: medium;
+    margin-left: 15px;
+    margin-top: 10px;
+    outline: none;
+    box-shadow: none;
+}
+
+.comfirm_password_input {
+    width: 338px;
+    height: auto;
+    padding: 10px;
+    font-size: medium;
+    margin-left: 15px;
+    margin-top: 10px;
+    outline: none;
+    box-shadow: none;
+}
+
+.have_account_div {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.have_account {
+    margin-left: 60px;
+    padding-right: 5px;
+    font-size: 15px;
+    color: black;
+    position: relative;
+    top: 10px;
+}
+
+.go_to_login_button {
+    color: #ffd600;
+    font-size: 18px;
+    position: relative;
+    top: 10px;
+}
+
+
+.Register_button {
+    width: 120px;
+    height: 40px;
+    background-color: #ffd600;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    float: right;
+    margin-right: 5px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+
+
+/* CSS cho thông báo lỗi */
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    position: absolute;
+    left: 15px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* CSS để điều chỉnh vị trí của các input khi có thông báo lỗi */
+.input-with-error {
+    position: relative;
+    z-index: 10;
+    margin-top: 30px;
+}

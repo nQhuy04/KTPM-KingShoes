@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="welcome-container">
+    <div class="welcome-message">
+        <h2>Chào mừng đến với trang quản lý</h2>
+        <p>Đây là nơi bạn có thể quản lý sản phẩm, đơn hàng và nhiều chức năng khác của hệ thống.</p>
+        <p>Hãy chọn một chức năng từ menu bên trái để bắt đầu.</p>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .welcome-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .welcome-message {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+        .welcome-message h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-message p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+</style>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Admin Panel</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        /* Paste CSS code here */
+        .admin-header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .admin-sidebar {
+            background-color: #f0f0f0; /* Màu nền xám nhạt cho sidebar */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho sidebar */
+        }
+
+            .admin-sidebar ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+                .admin-sidebar ul li {
+                    margin-bottom: 10px;
+                }
+
+                    .admin-sidebar ul li a {
+                        display: block;
+                        padding: 10px 15px;
+                        color: #333; /* Màu chữ mặc định */
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                    }
+
+                        .admin-sidebar ul li a:hover {
+                            background-color: #333; /* Màu nền khi hover */
+                            color: #fff; /* Màu chữ khi hover */
+                        }
+
+                        .admin-sidebar ul li a.active {
+                            background-color: #333; /* Màu nền khi được bấm */
+                            color: #fff; /* Màu chữ khi được bấm */
+                        }
+
+        .admin-content {
+            padding: 20px;
+            background-color: #fff; /* Màu nền trắng cho nội dung */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho nội dung */
+        }
+
+        .admin-footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="admin-sidebar">
+                    <h3>@Html.ActionLink("Trang Chủ", "Index", "AdminHome")</h3>
+                    <nav>
+                        <ul>
+                            <li>@Html.ActionLink("Users", "Index", "AdminUsers")</li>
+                            <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
+                            <li>@Html.ActionLink("Products", "Index", "AdminProduct")</li>
+                            <li>@Html.ActionLink("Size", "Index", "ProductSize")</li>
+                            <li>@Html.ActionLink("Orders", "Index", "AdminOrder")</li>
+                            <li>@Html.ActionLink("Archive", "Index", "Archive")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="admin-content">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            // Lấy đường dẫn hiện tại của trang
+            var currentUrl = window.location.pathname;
+
+            // Tìm thẻ <a> có href chứa đường dẫn hiện tại và thêm lớp 'active' vào đó
+            $('.admin-sidebar ul li a[href="' + currentUrl + '"]').addClass('active');
+        });
+    </script>
+</body>
+</html>

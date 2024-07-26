@@ -56,55 +56,56 @@
                             </a>
                         </li>
                         <li class="nav-li">
-                            <a class="nav-item" href="@Url.Action("Index", "Product")">
+                            <a class="nav-item" href="@Url.Action("Index", "NikeProduct")">
                                 NIKE
                             </a>
 
-                            
+
                         </li>
                         <li class="nav-li">
-                            <a class="nav-item" href="@Url.Action("Index", "Product")">
+                            <a class="nav-item" href="@Url.Action("Index", "AdidasProduct")">
                                 ADIDAS
                             </a>
 
-                            
+
                         </li>
                         <li class="nav-li">
-                            <a class="nav-item" href="@Url.Action("Index", "Product")">
+                            <a class="nav-item" href="@Url.Action("Index", "JordanProduct")">
                                 JORDAN
                             </a>
 
-                            
+
 
                         </li>
                         <li class="nav-li">
-                            <a class="nav-item" href="@Url.Action("Index", "Product")">
+                            <a class="nav-item" href="@Url.Action("Index", "YeezyProduct")">
                                 YEEZY
                             </a>
 
-                            
+
                         </li>
                     </ul>
                 </div>
 
                 <div class="search-box">
-                    <form action="" id="search-box">
-                        <input type="text" id="search-text" placeholder="Nhập từ cần tìm...">
+                    <form action="@Url.Action("Search", "AdidasProduct")" method="get" id="search-box">
+                        <input type="text" id="search-text" name="query" class="search-input" placeholder="Nhập từ cần tìm...">
                         <button id="search-btn">
                             <i class="fas fa-search icon_search"></i>
                         </button>
+                        <ul id="search-suggestions" style="display:none;"></ul>
                     </form>
                 </div>
 
-                
-                
-                
-                    <a  class="shopping-cart" href="@Url.Action("Index", "Cart")">
-                        <i class="fas fa-shopping-cart shopping-cart-item"></i>
-                        <span class="shopping-cart-notice">0</span>
-                    </a>
-                
-               
+
+
+
+                <a class="shopping-cart" href="@Url.Action("GetCartInfo", "Cart")">
+                    <i class="fas fa-shopping-cart shopping-cart-item"></i>
+                    <span id="shopping-cart-notice" class="shopping-cart-notice">0</span>
+                </a>
+
+
             </div>
         </nav>
     </header>
@@ -112,8 +113,8 @@
     <div class="Home_div" style="height:auto">
         @RenderBody()
     </div>
-      
-   
+
+
 
     <footer>
         <div class="top-footer">
@@ -188,5 +189,50 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript để cập nhật số lượng sản phẩm trong giỏ hàng -->
+    <script>
+    $(document).ready(function() {
+        $.ajax({
+            url: '@Url.Action("GetCartCount", "Cart")',
+            type: 'GET',
+            success: function(result) {
+                $('#shopping-cart-notice').text(result);
+            },
+            error: function() {
+                console.log('Không thể lấy số lượng giỏ hàng.');
+            }
+        });
+    });
+        $(document).ready(function() {
+    $('#search-text').on('input', function() {
+        var query = $(this).val();
+        if (query.length > 2) {
+            $.ajax({
+                url: '@Url.Action("GetSearchSuggestions", "Product")', // Đảm bảo tên controller chính xác
+                data: { term: query },
+                type: 'GET',
+                success: function(result) {
+                    var suggestions = result.map(function(item) {
+                        return '<li>' + item + '</li>';
+                    }).join('');
+                    $('#search-suggestions').html(suggestions).show();
+                },
+                error: function() {
+                    console.log('Không thể lấy gợi ý tìm kiếm.');
+                }
+            });
+        } else {
+            $('#search-suggestions').hide();
+        }
+    });
+});
+    </script>
+
+    <style>
+        .search-input {
+            background-color: rgb(233, 233, 233);
+        }
+    </style>
 </body>
 </html>

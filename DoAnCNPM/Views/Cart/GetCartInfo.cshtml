@@ -1,0 +1,109 @@
+﻿@using DoAnCNPM.Models
+@model List<CartItem>
+
+@{
+    ViewBag.Title = "GetCartInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin: 10px auto; width: 70%;">
+    <h2 style="text-align: center">THÔNG TIN GIỎ HÀNG</h2>
+    <hr />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>MÃ SẢN PHẨM</th>
+                <th>TÊN</th>
+                <th>ẢNH</th>
+                <th>KÍCH THƯỚC</th>
+                <th>SỐ LƯỢNG</th>
+                <th>ĐƠN GIÁ</th>
+                <th>THÀNH TIỀN</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.ProductID</td>
+                    <td>@product.NamePro</td>
+                    <td><img class="cart-product-image" src="@Url.Content(product.ImagePro)" /></td>
+                    <td>@product.Size</td>
+                    <td>@product.Number</td>
+                    <td>@product.Price</td>
+                    <td>@product.FinalPrice()</td>
+                </tr>
+            }
+            <tr style="font-weight:bold; text-align:right; color:red;">
+                <td colspan="6">Tổng số lượng: @ViewBag.TotalNumber</td>
+                <td colspan="1">Tổng tiền: @ViewBag.TotalPrice</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Thêm nút Thanh Toán và Tiếp Tục Mua Sắm -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="@Url.Action("Checkout", "Cart")" class="btn btn-primary">Thanh Toán</a>
+        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Tiếp Tục Mua Sắm</a>
+    </div>
+</div>
+
+<script>
+    setTimeout(function () {
+        var messageDiv = document.getElementById('cartMessage');
+        if (messageDiv) {
+            messageDiv.style.display = 'none';
+        }
+    }, 3000); // Thời gian hiển thị thông báo (3 giây)
+</script>
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse; /* Kết hợp các đường biên lại với nhau */
+    }
+
+        .table th, .table td {
+            padding: 12px; /* Khoảng cách giữa nội dung và đường viền */
+            text-align: center; /* Căn giữa nội dung */
+            border: 1px solid #ddd; /* Đường viền xung quanh ô */
+        }
+
+        .table th {
+            background-color: #f2f2f2; /* Màu nền cho tiêu đề cột */
+        }
+
+    .cart-product-image {
+        width: 100px; /* Chiều rộng của ảnh */
+        height: auto; /* Chiều cao tự động để giữ tỷ lệ */
+        border: 1px solid #ddd; /* Đường viền xung quanh ảnh */
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 16px;
+        color: white;
+        background-color: #007bff; /* Màu nền của nút chính */
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d; /* Màu nền của nút phụ */
+        margin-left: 10px; /* Khoảng cách giữa các nút */
+    }
+
+        .btn-secondary:hover {
+            opacity: 0.9;
+        }
+</style>

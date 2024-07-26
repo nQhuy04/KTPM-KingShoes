@@ -72,12 +72,34 @@
 .div-box-pro {
     padding: 10px;
     width: 22%;
-    text-align: left;
+    text-align: center; /* Căn giữa nội dung */
     margin-left: 10px;
     margin-bottom: 10px;
     font-size: 18px;
     font-family: 'Times New Roman';
-    background-color: snow;
+    background-color: #fff;
+    border: 2px solid #cacaca;
+    border-radius: 5px;
+    display: flex; /* Sử dụng flexbox để căn chỉnh */
+    flex-direction: column; /* Sắp xếp theo cột */
+    align-items: center; /* Căn giữa các phần tử */
+}
+
+.pro-img {
+    width: 200px; /* Đảm bảo hình ảnh chiếm hết chiều rộng */
+    height: 200px; /* Giữ tỉ lệ của hình ảnh */
+}
+
+.des-box {
+    margin-top: 10px; /* Khoảng cách giữa hình ảnh và mô tả */
+}
+
+.product-name {
+    font-weight: bold; /* In đậm tên sản phẩm */
+}
+
+.product-price {
+    margin-top: 5px; /* Khoảng cách giữa tên và giá */
 }
 
 .pro-img {

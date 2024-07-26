@@ -30,7 +30,8 @@ namespace DoAnCNPM.Models
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Khong duoc de trong")]
-        [Display(Name = "Mat khau")]
+        [MinLength(8, ErrorMessage = "Mat khau phai co it nhat 8 ky tu.")]
+        [RegularExpression(@"(?=.*\d).{8,}", ErrorMessage = "Mat khau phai chua it nhat mot so.")]
         [DataType(DataType.Password)]
         public string Userpassword { get; set; }
 

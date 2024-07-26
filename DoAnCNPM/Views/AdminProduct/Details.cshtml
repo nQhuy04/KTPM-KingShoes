@@ -1,0 +1,24 @@
+﻿@model DoAnCNPM.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product Name: @Model.ProductName</h4>
+    <h4>Price: @Model.Price</h4>
+    <h4>Category: @Model.Category.CategoryName</h4>
+    @if (!string.IsNullOrEmpty(Model.ImageProduct))
+    {
+        <img src="@Url.Content(Model.ImageProduct)" alt="Product Image" style="max-height: 200px; max-width: 200px; margin-top: 10px;" />
+    }
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ProductID }, new { onclick = "return confirm('Are you sure you want to delete this item?');" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

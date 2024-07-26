@@ -229,13 +229,15 @@ header .nav-bar {
 }
 
 .shopping-cart-notice {
-    padding-top: 3px;
-    padding: 0 3px;
-    border-radius: 500px;
     position: absolute;
-    background-color: #FED700;
-    color: #000;
-    line-height: 17px;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 

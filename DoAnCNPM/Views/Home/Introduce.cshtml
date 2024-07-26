@@ -1,8 +1,88 @@
-﻿
-@{
-    ViewBag.Title = "Introduce";
+﻿@{
+    ViewBag.Title = "Giới Thiệu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Introduce Page</h2>
+<style>
+    .intro-page {
+        font-family: Arial, sans-serif;
+        color: #333;
+        padding: 0;
+        margin: 0;
+    }
 
+    .hero {
+        background: url('/images/hero-bg.jpg') no-repeat center center/cover;
+        color: #000;
+        text-align: center;
+        padding: 80px 20px;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+        margin: 0;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .about-us, .contact-info {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .about-us .container, .contact-info .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .about-us h2, .contact-info h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    .about-us p, .contact-info p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .contact-info p {
+        font-size: 1.2em;
+    }
+
+</style>
+
+<div class="intro-page">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chào Mừng Đến Với KingShoes</h1>
+            <p>Điểm đến hàng đầu cho những đôi giày thời trang và chất lượng!</p>
+        </div>
+    </section>
+
+    <section class="about-us">
+        <div class="container">
+            <h2>Về Chúng Tôi</h2>
+            <p>KingShoes được thành lập với mục tiêu cung cấp cho khách hàng những đôi giày không chỉ đẹp mà còn chất lượng. Chúng tôi luôn cập nhật những xu hướng mới nhất trong ngành thời trang giày dép và lựa chọn các sản phẩm từ những thương hiệu hàng đầu để phục vụ nhu cầu của bạn.</p>
+            <p>Chúng tôi cam kết mang đến trải nghiệm mua sắm tuyệt vời nhất với dịch vụ khách hàng tận tâm và chính sách đổi trả linh hoạt. Đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ và tư vấn để bạn có được đôi giày phù hợp nhất với phong cách và nhu cầu của mình.</p>
+            <p>Khám phá bộ sưu tập của chúng tôi và tận hưởng những đôi giày chất lượng cao nhất ngay hôm nay!</p>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <h2>Liên Hệ Với Chúng Tôi</h2>
+            <p>Địa chỉ: 192/2 Nguyễn Thái Bình, Phường 12, Quận Tân Bình, Thành phố Hồ Chí Minh</p>
+            <p>Số điện thoại: (012) 345-6789</p>
+            <p>Email: support@kingshoes.com</p>
+            <p>Giờ làm việc: Thứ Hai - Thứ Sáu, 9:00 AM - 6:00 PM</p>
+        </div>
+    </section>
+</div>

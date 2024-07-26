@@ -1,0 +1,32 @@
+﻿@model DoAnCNPM.Models.Order
+
+@{
+    ViewBag.Title = "Order Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Order Details - Order ID: @Model.OrderID</h2>
+
+<p><strong>Order Date:</strong> @Model.OrderDate</p>
+<p><strong>Total Amount:</strong> @Model.TotalAmount</p>
+
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>Size</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+
+    @foreach (var item in Model.OrderDetails)
+    {
+        <tr>
+            <td>@item.Product.ProductName</td>
+            @*<td>@item.Size</td>*@
+            <td>@item.Quantity</td>
+            <td>@item.Price</td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Back to Orders", "Index")

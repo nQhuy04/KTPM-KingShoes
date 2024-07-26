@@ -4,18 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6894c6b6aaab40f997dca67a5753453d" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="DB_KingShoesModel.Archive" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_KingShoesModel.Category" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_KingShoesModel.OrderDetail" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_KingShoesModel.Order" Width="1.5" PointX="5.875" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_KingShoesModel.Product" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_KingShoesModel.User" Width="1.5" PointX="3.375" PointY="6.875" IsExpanded="true" />
-        <AssociationConnector Association="DB_KingShoesModel.FK__Archive__Stock__3F466844" ManuallyRouted="false" />
+      <Diagram DiagramId="5c52b3a63baa4247b99df431b2b8b1cf" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="DB_KingShoesModel.Archive" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.Category" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.OrderDetail" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.Order" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.Product" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.ProductSize" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KingShoesModel.User" Width="1.5" PointX="3.75" PointY="11.75" IsExpanded="true" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__Archive__Stock__4222D4EF" ManuallyRouted="false" />
         <AssociationConnector Association="DB_KingShoesModel.FK__Products__Catego__3C69FB99" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_KingShoesModel.FK__OrderDeta__Order__44FF419A" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_KingShoesModel.FK__OrderDeta__Produ__45F365D3" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_KingShoesModel.FK__Orders__UserID__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__OrderDeta__Order__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__OrderDeta__Produ__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__Orders__UserID__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KingShoesModel.FK__ProductSi__Produ__3F466844" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

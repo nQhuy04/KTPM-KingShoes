@@ -19,14 +19,14 @@ namespace DoAnCNPM.Models
         {
             this.Archives = new HashSet<Archive>();
             this.OrderDetails = new HashSet<OrderDetail>();
+            this.ProductSizes = new HashSet<ProductSize>();
         }
     
         public int ProductID { get; set; }
         public Nullable<int> ArchiveID { get; set; }
         public string ProductName { get; set; }
-        public decimal Price { get; set; }
+        public Nullable<decimal> Price { get; set; }
         public string ImageProduct { get; set; }
-        public int Size { get; set; }
         public Nullable<int> CategoryID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -34,5 +34,7 @@ namespace DoAnCNPM.Models
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductSize> ProductSizes { get; set; }
     }
 }
